@@ -53,7 +53,7 @@ export default class Details extends Component {
     render(){
         return(
             <div className={this.props.episode +'col-md-12'}>
-                <Details_close id={this.props.episode}/>
+                <Details_close/>
                 <h2><strong>Title: </strong>{this.state.title}</h2>
                 <p><strong>Opening Crawl: </strong>{this.state.opening_crawl}</p>
                 <p><strong>Director: </strong>{this.state.director}</p>

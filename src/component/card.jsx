@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import $ from 'jquery';
 import axios from 'axios'
 
-import Details from './details/details'
+import Details from './details/details-request'
 
 export default class Card extends Component {
     constructor(props){

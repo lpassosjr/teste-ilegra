@@ -1,0 +1,15 @@
+body{
+    background-color: #000000;
+    margin-top: 5%;
+}
+
+.movie-cover{
+    width: 100%;
+}
+.caption p{
+    display:inline-block;
+    width:180px;
+    white-space: nowrap;
+    overflow:hidden !important;
+    text-overflow: ellipsis;
+}

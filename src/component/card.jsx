@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
+import $ from 'jquery';
 import axios from 'axios'
 
 import Details from './details/details'
@@ -22,13 +23,13 @@ export default class Card extends Component {
                 cardRendered: true
             });            
         }else{
-            console.log('aqui amiguinho')
+            $(".card").closest(".modal-details").show()
         }
     }
 
     render(){
         return (
-            <div className="col-sm-6 col-md-3">
+            <div className="card col-sm-6 col-md-3">
                 <div className="thumbnail">
                     <div className="caption">
                         <img className="movie-cover" src={`../../images/episode-${this.props.film.episode_id}.jpg`} alt=""/>

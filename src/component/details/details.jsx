@@ -4,9 +4,6 @@ import axios from 'axios'
 import Details_various from './details-various'
 import Details_close from './details-close'
 
-
-
-
 const Details_URL = 'https://swapi.co/api/films'
 
 export default class Details extends Component {
@@ -54,11 +51,9 @@ export default class Details extends Component {
         this.swFilmDetails(this.props.episode)
     }
     render(){
-        // console.log(this.state.arrayInfo[2])
         return(
-            <div className='col-md-12'>
-                <Details_close/>
-                {/* {this.state.arrayInfo} */}
+            <div className={this.props.episode +'col-md-12'}>
+                <Details_close id={this.props.episode}/>
                 <h2><strong>Title: </strong>{this.state.title}</h2>
                 <p><strong>Opening Crawl: </strong>{this.state.opening_crawl}</p>
                 <p><strong>Director: </strong>{this.state.director}</p>

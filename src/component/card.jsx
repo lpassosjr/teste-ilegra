@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import $ from 'jquery';
 import axios from 'axios'
 
-import Details from './details/details-request'
+import Details from './details/details-modal'
 
 export default class Card extends Component {
     constructor(props){
@@ -14,17 +14,13 @@ export default class Card extends Component {
             cardRendered: false
         }
     }
-
-    _click() {
-        if(!this.state.cardRendered){
-            this.setState({
-                cardDetails: true, 
-                cardEpisode: this.props.film.episode_id, 
-                cardRendered: true
-            });            
-        }else{
-            $(".card").closest(".modal-details").show()
-        }
+    
+    componentWillMount(){
+        this.setState({
+            cardDetails: true, 
+            cardEpisode: this.props.film.episode_id, 
+            cardRendered: true
+        }); 
     }
 
     render(){
@@ -35,12 +31,10 @@ export default class Card extends Component {
                         <img className="movie-cover" src={`../../images/episode-${this.props.film.episode_id}.jpg`} alt=""/>
                         <h4>{this.props.film.title}</h4>
                         <p><small>{this.props.film.release_date.split('-', 1)}</small></p>
-                        <button className='btn btn-info' onClick={() => this._click()}>
-                            <i className='fa fa-plus'></i>
-                        </button>
+                        <Details episode={this.state.cardEpisode}/>
                     </div>
                 </div>
-                <div className="modal-details container">
+                {/* <div className="modal-details container">
                     <div className="row">
                     {
                         this.state.cardDetails
@@ -48,7 +42,7 @@ export default class Card extends Component {
                             : null
                     }
                     </div>
-                </div>
+                </div> */}
             </div>
            
         )

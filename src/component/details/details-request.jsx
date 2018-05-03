@@ -39,7 +39,6 @@ export default class Details extends Component {
                     vehicles: response.data.vehicles,
                     species: response.data.species
                 })
-                // console.log(response.data)
             }
         )
         .catch((error) => {
@@ -52,8 +51,7 @@ export default class Details extends Component {
     }
     render(){
         return(
-            <div className={this.props.episode +'col-md-12'}>
-                <Details_close/>
+            <div className={this.props.episode +' col-md-12'}>
                 <h2><strong>Title: </strong>{this.state.title}</h2>
                 <p><strong>Opening Crawl: </strong>{this.state.opening_crawl}</p>
                 <p><strong>Director: </strong>{this.state.director}</p>

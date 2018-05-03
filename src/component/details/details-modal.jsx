@@ -2,6 +2,7 @@ import React from 'react'
 import { Button } from 'react-bootstrap'
 import { Modal } from 'react-bootstrap'
 
+import Details_request from './details-request'
 
 export default class Details_modal extends React.Component {
     constructor(props, context) {
@@ -10,7 +11,8 @@ export default class Details_modal extends React.Component {
         this.handleHide = this.handleHide.bind(this);
     
         this.state = {
-          show: false
+          show: false,
+          cardEpisode: ''
         };
       }
     
@@ -19,7 +21,7 @@ export default class Details_modal extends React.Component {
       }
       render() {
         return (
-          <div className="modal-container" style={{ height: 200 }}>
+          <div className="modal-container">
             <Button
               bsStyle="primary"
               bsSize="large"
@@ -34,14 +36,13 @@ export default class Details_modal extends React.Component {
               container={this}
               aria-labelledby="contained-modal-title"
             >
-              <Modal.Header closeButton>
+              {/* <Modal.Header closeButton>
                 <Modal.Title id="contained-modal-title">
                   Header Modal
                 </Modal.Title>
-              </Modal.Header>
+              </Modal.Header> */}
               <Modal.Body>
-                Elit est explicabo ipsum eaque dolorem blanditiis doloribus sed id
-                ipsam, beatae, rem fuga id earum? Inventore et facilis obcaecati.
+                <Details_request episode={this.props.episode}/>
               </Modal.Body>
               <Modal.Footer>
                 <Button onClick={this.handleHide}>Close</Button>

@@ -2,14 +2,27 @@ import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import axios from 'axios'
 
-import Details from './details'
+import Details from './details/details'
 
 export default class Card extends Component {
     constructor(props){
         super(props)
         this.state = {
             cardDetails: false,
-            cardEpisode: '13'
+            cardEpisode: '',
+            cardRendered: false
+        }
+    }
+
+    _click() {
+        if(!this.state.cardRendered){
+            this.setState({
+                cardDetails: true, 
+                cardEpisode: this.props.film.episode_id, 
+                cardRendered: true
+            });            
+        }else{
+            console.log('aqui amiguinho')
         }
     }
 
@@ -26,20 +39,17 @@ export default class Card extends Component {
                         </button>
                     </div>
                 </div>
-                <div className="modal-Details">
+                <div className="modal-details container">
+                    <div className="row">
                     {
                         this.state.cardDetails
                             ? <Details episode={this.state.cardEpisode}/>
                             : null
                     }
+                    </div>
                 </div>
             </div>
            
         )
-    }
-
-    _click() {
-        console.log(this.props.film.episode_id);
-        this.setState({cardDetails: true, cardEpisode: this.props.film.episode_id});
     }
 }

@@ -5,7 +5,6 @@ import '../scss/content.scss'
 
 import React from 'react'
 import Main from '../component/main'
-import Details from '../component/details'
 
 export default props => (
     <div className='container'>

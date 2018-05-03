@@ -13,3 +13,19 @@ body{
     overflow:hidden !important;
     text-overflow: ellipsis;
 }
+.modal-details{
+    position: absolute;
+    display: block;
+    background-color: #010101;
+    z-index: 2;
+}
+.various-title,
+.various {
+    display: inline-block;
+}
+.various:after{
+    content: ',';
+}
+.various:last-child:after{
+    content: '.';
+}

@@ -8,24 +8,56 @@ body{
 }
 .caption p{
     display:inline-block;
-    width:180px;
-    white-space: nowrap;
-    overflow:hidden !important;
-    text-overflow: ellipsis;
 }
+
 .modal-details{
     position: absolute;
     display: block;
     background-color: #010101;
     z-index: 2;
 }
-.various-title,
-.various {
+
+.modal-container{
     display: inline-block;
+    float: right;
+}
+
+.modal-content p{
+    width: 100%;
+}
+
+.modal-header{
+    padding: 15px 15px 0;
+    border-bottom: none;
+}
+
+.modal-body{
+    padding: 0 15px 15px;
+}
+
+.modal-content p.various-title,
+.modal-content p.various {
+    display: inline-block;
+    width: auto;
 }
 .various:after{
     content: ',';
 }
 .various:last-child:after{
     content: '.';
+}
+
+.loading {
+    position:  absolute;
+    width: 95%;
+    height:  100%;
+    background:  #fff;
+    top: 0;
+}
+
+.loading img {
+    transform: translate(-50% , -50%);
+    position:  relative;
+    left:  50%;
+    top: 50%;
 }

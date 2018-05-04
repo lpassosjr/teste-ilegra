@@ -3,6 +3,8 @@ import axios from 'axios'
 
 import Details_various from './details-various'
 import Details_close from './details-close'
+import Loading from '../loading'
+
 
 const Details_URL = 'https://swapi.co/api/films'
 
@@ -19,7 +21,8 @@ export default class Details extends Component {
             planets: [],
             starships: [],
             vehicles: [],
-            species: []
+            species: [],
+            loading: true
         }
     }
     
@@ -51,8 +54,8 @@ export default class Details extends Component {
     }
     render(){
         return(
-            <div className={this.props.episode +' col-md-12'}>
-                <h2><strong>Title: </strong>{this.state.title}</h2>
+            <div className={'episode'+this.props.episode}>
+                <h3><strong>Title: </strong>{this.state.title}</h3>
                 <p><strong>Opening Crawl: </strong>{this.state.opening_crawl}</p>
                 <p><strong>Director: </strong>{this.state.director}</p>
                 <p><strong>Producer: </strong>{this.state.producer}</p> 
@@ -75,7 +78,11 @@ export default class Details extends Component {
                 <p className="various-title"><strong>Species: </strong></p>{this.state.species.map((url, index) => {
                     return <Details_various url={url} key={index}/> 
                 })}
+                <Loading loading={this.state.loading}/>
             </div>
         )
+    }
+    componentDidMount() {
+        setTimeout(() => this.setState({ loading: false }), 3000);
     }
 }

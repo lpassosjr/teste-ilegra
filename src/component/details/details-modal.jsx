@@ -23,11 +23,11 @@ export default class Details_modal extends React.Component {
         return (
           <div className="modal-container">
             <Button
-              bsStyle="primary"
-              bsSize="large"
+              bsStyle="default"
+              bsSize="small"
               onClick={() => this.setState({ show: true })}
             >
-              Show
+              <i className="fa fa-plus"></i>
             </Button>
     
             <Modal
@@ -36,17 +36,10 @@ export default class Details_modal extends React.Component {
               container={this}
               aria-labelledby="contained-modal-title"
             >
-              {/* <Modal.Header closeButton>
-                <Modal.Title id="contained-modal-title">
-                  Header Modal
-                </Modal.Title>
-              </Modal.Header> */}
+              <Modal.Header closeButton/>
               <Modal.Body>
                 <Details_request episode={this.props.episode}/>
               </Modal.Body>
-              <Modal.Footer>
-                <Button onClick={this.handleHide}>Close</Button>
-              </Modal.Footer>
             </Modal>
           </div>
         );

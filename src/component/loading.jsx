@@ -9,7 +9,7 @@ export default class Loading extends Component {
         console.log(this.props.loading)
         return (
             <div>
-                {this.props.loading ? <div className="loading"><img src="./images/loading_icon.gif" alt=""/></div> : ''}
+                {this.props.loading ? <div className="loading"><img src="../images/loading_icon.gif" alt=""/></div> : ''}
             </div>
         )
     }

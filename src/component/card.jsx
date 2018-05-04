@@ -28,7 +28,7 @@ export default class Card extends Component {
             <div className="card col-sm-6 col-md-3">
                 <div className="thumbnail">
                     <div className="caption">
-                        <img className="movie-cover" src={`../../images/episode-${this.props.film.episode_id}.jpg`} alt=""/>
+                        <img className="movie-cover" src={`./images/episode-${this.props.film.episode_id}.jpg`} alt=""/>
                         <h4>{this.props.film.title}</h4>
                         <p><small>{this.props.film.release_date.split('-', 1)}</small></p>
                         <Details episode={this.state.cardEpisode}/>

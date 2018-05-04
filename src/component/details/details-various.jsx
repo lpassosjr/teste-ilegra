@@ -28,7 +28,7 @@ export default class Details_various extends Component {
     }
     render(){
         return(
-            <p className="various">{this.state.name}</p>
+            <p className="various">{' '+this.state.name}</p>
         )
     }
 }

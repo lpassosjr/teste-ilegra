@@ -37,15 +37,16 @@ body{
 
 .modal-content p.various-title,
 .modal-content p.various {
-    display: inline-block;
     width: auto;
 }
+
+.various{
+    margin-left: 5px;
+}
 .various:after{
-    content: ',';
+    content: '; ';
 }
-.various:last-child:after{
-    content: '.';
-}
+
 
 .loading {
     position:  absolute;
